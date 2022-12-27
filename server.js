@@ -4,11 +4,11 @@ const { port } = require("./constants");
 const https = require("https");
 
 // Routes
-//const TWITTER = require("./api/Twitter");
+const TWITTER = require("./api/Twitter");
 const REDDIT = require("./api/Reddit");
 //const INSTAGRAM = require("./api/Instagram");
 const GOOGLE = require("./api/Google");
-//const YOUTUBE = require("./api/YouTube");
+const YOUTUBE = require("./api/YouTube");
 // const HUBSPOT = require("./api/HubSpot");
 const MONGO = require("./api/MongoDB");
 
@@ -73,9 +73,9 @@ if (process.env.NODE_ENV === "production") {
 // Twitter
 /////////////////////////////////////////////
 
-//app.all("/twitter/search", TWITTER.search);
-//app.all("/twitter/search/username", TWITTER.searchByUsername);
-//app.all("/twitter/get/tweets/id", TWITTER.getTweetsByUserId);
+app.all("/twitter/search", TWITTER.search);
+app.all("/twitter/search/username", TWITTER.searchByUsername);
+app.all("/twitter/get/tweets/id", TWITTER.getTweetsByUserId);
 
 /////////////////////////////////////////////
 // Reddit
@@ -108,8 +108,8 @@ app.all("/google/relatedQueries", GOOGLE.relatedQueries);
 // YouTube
 /////////////////////////////////////////////
 
-//app.all("/youtube/search", YOUTUBE.search);
-//app.all("/youtube/get/trending", YOUTUBE.getTrendingVideos);
+app.all("/youtube/search", YOUTUBE.search);
+app.all("/youtube/get/trending", YOUTUBE.getTrendingVideos);
 
 /////////////////////////////////////////////
 // Other
